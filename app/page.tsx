@@ -1,113 +1,296 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  {
+    const backgroundImageStyle = {
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+      backgroundSize: "cover", // You can customize other background properties here
+      height: "100vh", // Set the height as needed
+    };
+
+    return (
+      <>
+        <div
+          style={backgroundImageStyle}
+          className="flex justify-center items-center flex-col w-full mx-auto"
+        >
+          <h1>
+            <span className="text-center mx-auto text-white text-3xl mb-5">
+              View Energy Dashboard
+            </span>
+          </h1>
+
+          <Button className="mt-5 ">
+            <Link href="/monitor">View Dashboard</Link>
+          </Button>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        {/* about */}
+        <div className=" p-8">
+          <div className="mt-4">
+            {/* about */}
+            <>
+              <section className="m-4 md:m-8 shadow-md">
+                <div className="container p-4 mx-auto my-6 space-y-1 text-center">
+                  <span className="text-xs font-semibold tracki uppercase text-rose-600">
+                    About
+                  </span>
+                  <h2 className="pb-3 text-3xl font-bold md:text-4xl">
+                    ESP32 Energy Monitor
+                  </h2>
+                  <p>
+                    Welcome to the ESP32 Energy Monitor, Link platform designed
+                    to monitor and visualize energy data collected from ESP32
+                    devices. Our system provides real-time insights into
+                    voltage, current, power, and energy consumption, helping you
+                    keep track of your electrical usage.
+                  </p>
+                </div>
+                <div className="container grid justify-center gap-4 mx-auto lg:grid-cols-2 xl:grid-cols-3">
+                  <div className="flex flex-col px-8 py-6 lg:border-none xl:border-solid">
+                    <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font ">
+                      Historical Data Review
+                    </h2>
+                    <p className="flex-1 mb-4 text-base leading-relaxed ">
+                      historical energy data to identify trends, patterns, and
+                      potential areas for optimization.
+                    </p>
+                    <Link
+                      className="inline-flex items-center space-x-2 text-sm text-rose-600"
+                      href="/history"
+                    >
+                      <span>Learn More</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </Link>
+                  </div>
+                  <div className="flex flex-col px-8 py-6">
+                    <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font ">
+                      Real-time Monitoring
+                    </h2>
+                    <p className="flex-1 mb-4 text-base leading-relaxed ">
+                      Get live updates on voltage, current, power, and energy
+                      consumption from your ESP32 devices.
+                    </p>
+                    <Link
+                      className="inline-flex items-center space-x-2 text-sm text-rose-600"
+                      href="/monitor"
+                    >
+                      <span>Learn More</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </Link>
+                  </div>{" "}
+                  <div className="flex flex-col px-8 py-6">
+                    <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font ">
+                      AI-powered Suggestions
+                    </h2>
+                    <p className="flex-1 mb-4 text-base leading-relaxed ">
+                      Explore AI-generated suggestions based on your energy
+                      data.
+                    </p>
+                    <Link
+                      className="inline-flex items-center space-x-2 text-sm text-rose-600"
+                      href="/monitor"
+                    >
+                      <span>Learn More</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </section>
+            </>
+            {/* about */}
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+            {/* working */}
+            <>
+              <section className="shadow-md ">
+                <div className="container max-w-xl p-6 py-12 mx-auto space-y-16 lg:px-8 lg:max-w-7xl">
+                  <div>
+                    <h2 className="text-2xl font-bold tracki text-center sm:text-2xl ">
+                      How it works
+                    </h2>
+                  </div>
+                  <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+                    <div>
+                      <h3 className="text-2xl font-bold tracki sm:text-2xl ">
+                        ESP32 and Sensors
+                      </h3>
+                      <p className="mt-3 text-lg ">
+                        Install and configure ESP32 and other sensors to measure
+                        voltage, current, and power
+                      </p>
+                      <div className="mt-12 space-y-12">
+                        <div className="flex">
+                          <div className="flex-shrink-0">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-md bg-rose-600 text-gray-50">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                className="w-7 h-7"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M5 13l4 4L19 7"
+                                ></path>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="ml-4">
+                            <h4 className="text-lg font-medium leading-relaxed ">
+                              Data Transmission
+                            </h4>
+                            <p className="mt-2 ">
+                              ESP32 devices send energy data to our platform via
+                              the Internet.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex">
+                          <div className="flex-shrink-0">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-md bg-rose-600 text-gray-50">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                className="w-7 h-7"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M5 13l4 4L19 7"
+                                ></path>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="ml-4">
+                            <h4 className="text-lg font-medium leading-relaxed ">
+                              Real-time Visualization
+                            </h4>
+                            <p className="mt-2 ">
+                              View real-time graphs and charts on the dashboard
+                              to monitor energy metrics.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex">
+                          <div className="flex-shrink-0">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-md bg-rose-600 text-gray-50">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                className="w-7 h-7"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M5 13l4 4L19 7"
+                                ></path>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="ml-4">
+                            <h4 className="text-lg font-medium leading-relaxed ">
+                              Historical Analysis
+                            </h4>
+                            <p className="mt-2 ">
+                              Dive into historical data to gain Link deeper
+                              understanding of your energy consumption patterns.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex">
+                          <div className="flex-shrink-0">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-md bg-rose-600 text-gray-50">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                className="w-7 h-7"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M5 13l4 4L19 7"
+                                ></path>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="ml-4">
+                            <h4 className="text-lg font-medium leading-relaxed ">
+                              AI Insights
+                            </h4>
+                            <p className="mt-2 ">
+                              Generate AI-powered suggestions to optimize energy
+                              usage and reduce environmental impact.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div aria-hidden="true" className="mt-10 lg:mt-0">
+                      <Image
+                        src="https://source.unsplash.com/random/360x480?energy,electricity"
+                        alt=""
+                        className="mx-auto rounded-lg shadow-lg bg-gray-500"
+                        height={400}
+                        width={400}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </>
+            {/* working */}
+          </div>
+        </div>
+        {/* about */}
+      </>
+    );
+  }
 }
