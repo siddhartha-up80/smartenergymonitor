@@ -44,7 +44,7 @@ const Page = () => {
   const [ailoading, setAiLoading] = useState<any>(false);
   const [ontime, setonTime] = useState<any>("");
   const [offtime, setoffTime] = useState<any>("");
-  const [cuurentState, setcuurentState] = useState<any>(false);
+  const [cuurentState, setcuurentState] = useState<any>(true);
 
   const [energy, setenergy] = useState<any>(240);
   const [maxenergy, setmaxenergy] = useState<any>(0);
@@ -133,7 +133,7 @@ const Page = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ state: cuurentState ? "1" : "0" }),
+        body: JSON.stringify({ state: cuurentState ? "0" : "1" }),
       });
     } catch (error) {
       console.error("Error toggling relay state:", error);
